@@ -1,13 +1,19 @@
 {
     "name": "vitalii_b88/hexlet_php_project_lvl1",
+    "type": "project",
     "description": "Hexlet PHP Project lvl1",
+    "homepage": "https://github.com/vitalii88/php-project-lvl1",
+    "license": "MIT",
     "authors": [
         {
             "name": "Vitalii Bairak",
-            "email": "vitalii_b88@yahoo.com"
+            "email": "vitalii_b88@yahoo.com",
+            "role": "Developer"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=5.3.0"
+    },
     "bin": [
         "bin/brain-games"
     ]

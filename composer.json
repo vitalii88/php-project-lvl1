@@ -1,5 +1,5 @@
 {
-    "name": "vitalii_b88/hexlet_php_project_lvl1",
+    "name": "vitalii_b88/hexlet_php_project_lvl1: 0.0.1",
     "type": "lib",
     "description": "Hexlet PHP Project lvl1",
     "homepage": "https://github.com/vitalii88/php-project-lvl1",
@@ -12,8 +12,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "minimum-stability": "dev"
+        "php": ">=5.3.0"
     },
     "bin": [
         "bin/brain-games"

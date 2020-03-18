@@ -2,8 +2,9 @@
 
 <?php
 
-require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 use BrainGames\Cli;
 
 echo "Welcome to the Brain Games!";
+run();

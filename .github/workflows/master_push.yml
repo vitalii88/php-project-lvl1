@@ -16,11 +16,12 @@ jobs:
       - name: Git clone
         uses: actions/checkout@v2
       
+      # Развернем проект
       - name: Make install
         run: |
           make install
 
+      # Запускаем линтер
       - name: make test
-        # Запускаем линтер
         run: |
           make lint

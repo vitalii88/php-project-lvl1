@@ -5,11 +5,10 @@ name: master_push
 on:
   - push
   - pull_request
-
+    
 jobs:
-  # strart "Make lint"
-  linter_test:
-    runs-on: [ubuntu-latest]
+  buil:
     steps:
       - name: Linter
-        run: make lint
+        run: |
+          make lint

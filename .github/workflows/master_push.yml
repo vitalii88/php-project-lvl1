@@ -14,7 +14,11 @@ jobs:
     steps:
       # Для того что бы следующие команды работали с корнем проекта
       - name: Git clone
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+      
+      - name: Make install
+        run: |
+          make install
 
       - name: make test
         # Запускаем линтер

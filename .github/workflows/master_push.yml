@@ -7,8 +7,7 @@ on:
   - pull_request
     
 jobs:
-  buil:
-    steps:
-      - name: Linter
-        run: |
-          make lint
+  steps:
+    - name: Linter
+      run: |
+        make lint

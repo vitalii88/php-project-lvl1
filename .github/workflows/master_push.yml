@@ -8,6 +8,6 @@ on:
     
 jobs:
   steps:
-    - name: Linter
-      run: |
-        make lint
+  - name:
+    run: |
+      make lint

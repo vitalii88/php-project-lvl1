@@ -1,7 +1,6 @@
 name: master_push
 
-# Controls when the action will run. Triggers the workflow on push or pull request 
-# events but only for the master branch
+# Указываем тригер
 on:
   - push
   - pull_request
@@ -9,11 +8,15 @@ on:
 jobs:
   build:
 
-    # The type of machine to run the job on
+    # указываем среду
     runs-on: ubuntu-latest
 
     steps:
+      # Для того что бы следующие команды работали с корнем проекта
+      - name: Git clone
+        uses: actions/checkout@v1
+
       - name: make test
-        # Install and build project
+        # Запускаем линтер
         run: |
-          make install
+          make lint

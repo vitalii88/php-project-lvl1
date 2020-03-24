@@ -6,4 +6,5 @@
 На текущий момент проект находится в стадии разработки.
 
 Работа первой игры:
-https://asciinema.org/a/ASRcbKekB61Eq1lnkBiHCuosX
+
+[![asciicast](https://asciinema.org/a/ASRcbKekB61Eq1lnkBiHCuosX.svg)](https://asciinema.org/a/ASRcbKekB61Eq1lnkBiHCuosX)

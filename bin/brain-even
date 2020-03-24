@@ -11,6 +11,8 @@ if (file_exists($autoloadPath1)) {
 }
 
 
-use function BrainGames\Cli\run;
+//use function BrainGames\Cli\run;
+use function BrainGames\Even\startGame;
 
-run();
+//run();
+startGame();

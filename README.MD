@@ -2,7 +2,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0aaea5dcb249f9766368/test_coverage)](https://codeclimate.com/github/vitalii88/php-project-lvl1/test_coverage)
 ![master_push](https://github.com/vitalii88/php-project-lvl1/workflows/master_push/badge.svg)
 
-Это реализация первого проекта на портале hexley.io.
+Это реализация первого проекта на портале hexlet.io.
 На текущий момент проект находится в стадии разработки.
 
 Работа первой игры:

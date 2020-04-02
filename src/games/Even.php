@@ -2,66 +2,58 @@
 
 namespace BrainGames\Even;
 
-function startGame()
+use function BrainGames\core\startGame as startGame;
+
+use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
+
+function startEvenGame()
 {
-    # Счетчик побед
-    $correctStrike = 3;
-    $randomNumb = 0; # буду генерить через random_int(1, 999);
-    $correctAnswer = "Correct!";
-    $wrongAnswerYes = "is wrong answer :(. Correct answer was 'no'";
-    $wrongAnswerNO = "is wrong answer :(. Correct answer was 'yes'";
+    // Правила
+    $rule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
-    echo "Welcome to Brain Games", PHP_EOL;
-    echo "Answer \"yes\" if the number is even, otherwise answer \"no\".", PHP_EOL;
+    //--------- Через функции (генерит в ядро 1 раз)--------
 
-    echo "May I have your name? ", PHP_EOL;
-    $name = trim(fgets(STDIN));
-    echo "Hello, {$name}!", PHP_EOL;
+    // Генерим случайное число
+    // function getRandom()
+    // {
+    //     return random_int(1, 999);
+    // }
+    // $questin = getRandom();
+    
+    //-------- Попытка создать задания в массив -------------
+    
+    // Пишем в массив вопросы
+    $questionArr = [];
+    for ($i = 0; $i < CORRECT_STRIKE; $i++) {
+        $questionArr[] = random_int(1, 999);
+    }
 
-    while ($correctStrike > 0) {
-        $randomNumb = random_int(1, 999);
-        echo "Question: {$randomNumb}", PHP_EOL;
-        echo "Your answer: ";
-        $playerAnswer = trim(fgets(STDIN));
-
-        switch ($playerAnswer) {
-            case 'yes':
-                if ($randomNumb % 2 == 0) {
-                    echo "{$correctAnswer}", PHP_EOL;
-                    $correctStrike--;
-                } else {
-                    echo "{$playerAnswer} {$wrongAnswerYes}", PHP_EOL;
-                    $correctStrike = -1;
-                }
-                break;
-            
-            case 'no':
-                if ($randomNumb % 2 == 1) {
-                    echo "{$correctAnswer}", PHP_EOL;
-                    $correctStrike--;
-                } else {
-                    echo "{$playerAnswer} {$wrongAnswerNO}", PHP_EOL;
-                    $correctStrike = -1;
-                }
-                break;
-            
-            default:
-                if ($randomNumb % 2 == 0) {
-                    echo "{$playerAnswer} {$wrongAnswerNO}", PHP_EOL;
-                    $correctStrike = -1;
-                } else {
-                    echo "{$playerAnswer} {$wrongAnswerYes}", PHP_EOL;
-                    $correctStrike = -1;
-                }
-                break;
+    //создаем массив с ответами
+    $correctAnswerArr = [];
+    for ($i = 0; $i < CORRECT_STRIKE; $i++) {
+        if ($questionArr[$i] % 2 == 0) {
+            $correctAnswerArr[] = "yes";
+        } else {
+            $correctAnswerArr[] = "no";
         }
-        # END swith
     }
-    # END while
 
-    if ($correctStrike == 0) {
-        echo "Congratulations {$name}", PHP_EOL;
-    } else {
-        echo "Let's try again, {$name}!", PHP_EOL;
-    }
+    //---------------------
+    
+    
+    //---------------------
+    
+    // // Правельный ответ
+    // $correctAnswer = function ($question)
+    //     {
+    //     if ($question % 2 == 0) {
+    //         $answer = 'yes';
+    //         return $answer;
+    //     } else {
+    //         $answer = 'no';
+    //         return $answer;
+    //     }
+    // };
+
+    startGame($rule, $questionArr, $correctAnswerArr);
 }

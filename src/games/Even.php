@@ -6,18 +6,20 @@ use function BrainGames\core\startGame as startGame;
 
 use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
 
+// Генерим случайное число
+function getRandom()
+{
+    return random_int(1, 999);
+}
+
 function startEvenGame()
 {
     // Правила
     $rule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
 
-    //--------- Через функции (генерит в ядро 1 раз)--------
+    //--------!!! Через функции (генерит в ядро 1 раз)-------
 
-    // Генерим случайное число
-    // function getRandom()
-    // {
-    //     return random_int(1, 999);
-    // }
+
     // $questin = getRandom();
     
     //-------- Попытка создать задания в массив -------------
@@ -25,7 +27,7 @@ function startEvenGame()
     // Пишем в массив вопросы
     $questionArr = [];
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
-        $questionArr[] = random_int(1, 999);
+        $questionArr[] = getRandom();
     }
 
     //создаем массив с ответами

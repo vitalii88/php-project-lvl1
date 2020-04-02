@@ -7,4 +7,8 @@
 
 Работа первой игры:
 
-[![asciicast](https://asciinema.org/a/ASRcbKekB61Eq1lnkBiHCuosX.svg)](https://asciinema.org/a/ASRcbKekB61Eq1lnkBiHCuosX)
+[![asciicast](https://asciinema.org/a/aSJXKjtc2ohzFtjik1GvAo9Ki.svg)](https://asciinema.org/a/aSJXKjtc2ohzFtjik1GvAo9Ki)
+
+Работа второй игры:
+
+[![asciicast](https://asciinema.org/a/htPQ90zs7Ko4UCUlnc1elgzax.svg)](https://asciinema.org/a/htPQ90zs7Ko4UCUlnc1elgzax)

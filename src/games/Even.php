@@ -9,7 +9,7 @@ use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
 // Генерим случайное число
 function getRandom()
 {
-    return random_int(1, 999);
+    return random_int(1, 100);
 }
 
 function startEvenGame()

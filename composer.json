@@ -22,13 +22,15 @@
     },
     "bin": [
         "bin/brain-even",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "autoload": {
         "files": [
             "src/games/Cli.php",
             "src/games/Even.php",
             "src/games/Calc.php",
+            "src/games/Gcd.php",
             "src/core.php"
         ]
     }

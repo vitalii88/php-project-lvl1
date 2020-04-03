@@ -46,7 +46,7 @@ function startGcdGame()
     // }
 
     // Пишем в массивы задачу и ответы
-    for ($i = 0; $i < CORRECT_STRIKE; $i++){
+    for ($i = 0; $i < CORRECT_STRIKE; $i++) {
         $num1 = getRandom();
         $num2 = getRandom();
         // $num1 = 36;
@@ -67,12 +67,7 @@ function startGcdGame()
         }
         //echo "$num1\n";
         $correctAnswerArr[] = $num1;
-
-
-
     }
 
     startGame($rule, $questionArr, $correctAnswerArr);
-
-
 }

@@ -2,15 +2,15 @@
 
 namespace BrainGames\Even;
 
-use function BrainGames\core\startGame as startGame;
+use function BrainGames\core\{startGame, getRandom};
 
 use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
 
-// Генерим случайное число
-function getRandom()
-{
-    return random_int(1, 100);
-}
+// // Генерим случайное число
+// function getRandom()
+// {
+//     return random_int(1, 100);
+// }
 
 function startEvenGame()
 {

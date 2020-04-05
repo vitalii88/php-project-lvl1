@@ -2,8 +2,9 @@
 
 namespace BrainGames\Gcd;
 
-use function BrainGames\core\startGame as startGame;
-use function BrainGames\Even\getRandom as getRandom;
+use function BrainGames\core\{startGame, getRandom};
+
+// use function BrainGames\Even\getRandom as getRandom;
 
 use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
 

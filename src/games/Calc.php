@@ -2,10 +2,12 @@
 
 namespace BrainGames\Calc;
 
-use function BrainGames\core\startGame as startGame;
-use function BrainGames\Even\getRandom as getRandom;
+use function BrainGames\core\{startGame, getRandom};
 
-use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
+//use function BrainGames\core\getRandom as getRandom;
+
+// use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
+use const BrainGames\core\CORRECT_STRIKE;
 
 function startCalcGame()
 {

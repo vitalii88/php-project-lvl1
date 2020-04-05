@@ -3,6 +3,8 @@
 namespace BrainGames\core;
 
 const CORRECT_STRIKE = 3;
+const MIN_RANDOM = 2;
+const MAX_RANDOM = 100;
 
 function startGame($rule, $questionArr, $correctAnswerArr)
 {
@@ -43,4 +45,9 @@ function startGame($rule, $questionArr, $correctAnswerArr)
 //------------
 
     echo "Congratulations {$name}", PHP_EOL;
+}
+
+function getRandom()
+{
+    return random_int(MIN_RANDOM, MAX_RANDOM);
 }

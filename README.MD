@@ -16,3 +16,7 @@
 Работа третьей игры:
 
 [![asciicast](https://asciinema.org/a/QSac45tM06dvGDsFaHP17e2i5.svg)](https://asciinema.org/a/QSac45tM06dvGDsFaHP17e2i5)
+
+Работа четвертой игры:
+
+[![asciicast](https://asciinema.org/a/8Uw2Ym4t0kPzLMzcX9pyXoSh8.svg)](https://asciinema.org/a/8Uw2Ym4t0kPzLMzcX9pyXoSh8)

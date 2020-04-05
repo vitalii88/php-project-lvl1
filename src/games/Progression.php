@@ -69,7 +69,6 @@ function startProgressionGame()
     
     ################ запуск движка ################
     startGame($rule, $questionArr, $correctAnswerArr);
-    
 }
 
 // !!! РАБОТАЕТ !!! собираем один индекс массива из длинной строки

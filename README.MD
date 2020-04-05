@@ -20,3 +20,7 @@
 Работа четвертой игры:
 
 [![asciicast](https://asciinema.org/a/8Uw2Ym4t0kPzLMzcX9pyXoSh8.svg)](https://asciinema.org/a/8Uw2Ym4t0kPzLMzcX9pyXoSh8)
+
+Работа пятой игры:
+
+[![asciicast](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4.svg)](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4)

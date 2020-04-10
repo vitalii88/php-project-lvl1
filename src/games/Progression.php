@@ -14,8 +14,7 @@ function getProgression()
     $d = random_int(3, 10); // шаг прогрессии
     $lengthProgression = 10;
     for ($i = 0; $i < $lengthProgression; $i++) {
-        $progression[] = $starProgression;
-        $starProgression = $starProgression + $d;
+        $progression[] = $starProgression + $d * $i;
     }
     return $progression;
 }

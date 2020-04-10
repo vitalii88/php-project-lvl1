@@ -1,5 +1,4 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/0aaea5dcb249f9766368/maintainability)](https://codeclimate.com/github/vitalii88/php-project-lvl1/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0aaea5dcb249f9766368/test_coverage)](https://codeclimate.com/github/vitalii88/php-project-lvl1/test_coverage)
 ![master_push](https://github.com/vitalii88/php-project-lvl1/workflows/master_push/badge.svg)
 
 Это реализация первого проекта на портале hexlet.io.
@@ -24,3 +23,27 @@
 Работа пятой игры:
 
 [![asciicast](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4.svg)](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4)
+
+
+--------------------------
+
+Правки
+
+https://github.com/vitalii88/php-project-lvl1/blob/1cc8b6d9a3a07f073688bbd377e12fe44e3b0ad5/src/games/Calc.php#L31
+
+Для сборки строки лучше использовать интерполяцию.
+
+Попробуйте собрать строку за пределами switch. Тогда вопрос будет сформирован одной строкой кода.
+
+https://github.com/vitalii88/php-project-lvl1/blob/1cc8b6d9a3a07f073688bbd377e12fe44e3b0ad5/src/games/Calc.php#L18-L21
+
+Вложенные определения (функций/констант) делаются тогда, когда их содержимое зависит от лексического контекста. Во всех остальных случаях предпочтительно выносить определения на уровень файла. Такой код легче читать, проще переиспользовать и по необходимости можно экспортировать и тестировать.
+
+
+https://github.com/vitalii88/php-project-lvl1/blob/1cc8b6d9a3a07f073688bbd377e12fe44e3b0ad5/src/games/Progression.php#L17
+
+Попробуйте сделать фунцию getProgression чистой.
+
+Вообще, любой элемент прогрессии (в т.ч. спрятанный) вычисляется по простой формуле start + diff * i
+
+

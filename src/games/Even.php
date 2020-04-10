@@ -2,23 +2,25 @@
 
 namespace BrainGames\Even;
 
-use function BrainGames\core\{startGame, getRandom};
+use function BrainGames\core\startGame;
 
-use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
+use const BrainGames\core\{CORRECT_STRIKE, MIN_RANDOM, MAX_RANDOM};
 
 function startEvenGame()
 {
+    $dataArr = [
+        'rule' => [],
+        'question' => [],
+        'correctAnswer' => [],
+    ];
     // Правила
-    $rule = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
-    // Пишем в массив вопросы
-    $questionArr = [];
+    $dataArr['rule'] = "Answer \"yes\" if the number is even, otherwise answer \"no\".";
+    
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
-        $questionArr[] = getRandom();
+        $dataArr['question'][] = random_int(MIN_RANDOM, MAX_RANDOM);
     }
-    //создаем массив с ответами
-    $correctAnswerArr = [];
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
-        ($questionArr[$i] % 2 == 0) ? $correctAnswerArr[] = "yes" : $correctAnswerArr[] = "no";
+        ($dataArr['question'][$i] % 2 == 0) ? $dataArr['correctAnswer'][] = "yes" : $dataArr['correctAnswer'][] = "no";
     }
-    startGame($rule, $questionArr, $correctAnswerArr);
+    startGame($dataArr);
 }

@@ -2,15 +2,14 @@
 
 namespace BrainGames\Calc;
 
-use function BrainGames\core\{startGame, getRandom};
+use function BrainGames\core\startGame;
 
-use const BrainGames\core\CORRECT_STRIKE;
+use const BrainGames\core\{CORRECT_STRIKE, MIN_RANDOM, MAX_RANDOM};
 
 function startCalcGame()
 {
-
 ################ условие задачи ################
-    $rule = "What is the result of the expression?";
+    $dataArr['rule'] = "What is the result of the expression?";
 
 ################ масив с действиями ################
     $mathActionsArr = ['+', '-', '*'];
@@ -20,27 +19,25 @@ function startCalcGame()
         return $mathActionsArr[array_rand($mathActionsArr)];
     }
     ################ Задание и Правельные ответы ################
-    $questionArr = [];
-    $correctAnswerArr = [];
     // Циклом создаем условия и сразу решаем его
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
-        $num1 = getRandom();
-        $num2 = getRandom();
+        $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
+        $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
         switch (getRandMathActions($mathActionsArr)) {
             case '-':
-                $questionArr[] = $num1 . '-' . $num2;
-                $correctAnswerArr[] = $num1 - $num2;
+                $dataArr['question'][] = $num1 . '-' . $num2;
+                $dataArr['correctAnswer'][] = $num1 - $num2;
                 break;
             case '+':
-                $questionArr[] = $num1 . '+' . $num2;
-                $correctAnswerArr[] = $num1 + $num2;
+                $dataArr['question'][] = $num1 . '+' . $num2;
+                $dataArr['correctAnswer'][] = $num1 + $num2;
                 break;
             case '*':
-                $questionArr[] = $num1 . '*' . $num2;
-                $correctAnswerArr[] = $num1 * $num2;
+                $dataArr['question'][] = $num1 . '*' . $num2;
+                $dataArr['correctAnswer'][] = $num1 * $num2;
                 break;
         }
     }
     ############### Обращаемся к движку ###############
-    startGame($rule, $questionArr, $correctAnswerArr);
+    startGame($dataArr);
 }

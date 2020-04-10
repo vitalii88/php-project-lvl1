@@ -2,20 +2,20 @@
 
 namespace BrainGames\Progression;
 
-use function BrainGames\core\{startGame, getRandom};
+use function BrainGames\core\startGame;
 
-// use function BrainGames\Even\getRandom as getRandom;
+use const BrainGames\core\{CORRECT_STRIKE, MAX_RANDOM, MIN_RANDOM};
 
-use const BrainGames\core\CORRECT_STRIKE as CORRECT_STRIKE;
+
 
 ################ прогрессия ################
 function getProgression()
 {
     $progression = [];
-    $starProgression = getRandom();
+    $starProgression = random_int(MIN_RANDOM, MAX_RANDOM);
     $d = random_int(3, 10); // шаг прогрессии
-    for ($i = 0; $i < 10; $i++) {
-        // шаг прогресии делаем не слишком большим
+    $lengthProgression = 10;
+    for ($i = 0; $i < $lengthProgression; $i++) {
         $progression[] = $starProgression;
         $starProgression = $starProgression + $d;
     }
@@ -24,18 +24,21 @@ function getProgression()
 ################  Логика ################
 function startProgressionGame()
 {
-    ################ условие задачи ################
-    $rule = "What number is missing in the progression?";
     ################ объявим рабочие массивы ################
-    $questionArr = [];
-    $correctAnswerArr = [];
+    $dataArr = [
+        'rule' => [],
+        'question' => [],
+        'correctAnswer' => [],
+    ];
+    ################ условие задачи ################
+    $dataArr['rule'] = "What number is missing in the progression?";
     ################  Генерим массивы с вопросами и ответами   ################
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
         $progressionArr = getProgression();
         $randomArrIndex = array_rand($progressionArr);
         $index = $randomArrIndex;
         //Пишем масив с ответами и заменяем ответ на заглушку
-        $correctAnswerArr[] = $progressionArr[$index];
+        $dataArr['correctAnswer'][] = $progressionArr[$index];
         $progressionArr[$index] = "..";
         // Собираем строку с вопросом
         $tempString = "";
@@ -43,8 +46,8 @@ function startProgressionGame()
             $tempString = $tempString . $value . " ";
         }
         // Пишем вопрос в массив
-        $questionArr[] = $tempString;
+        $dataArr['question'][] = $tempString;
     }
     ################ запуск движка ################
-    startGame($rule, $questionArr, $correctAnswerArr);
+    startGame($dataArr);
 }

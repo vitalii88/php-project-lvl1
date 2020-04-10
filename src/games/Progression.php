@@ -6,9 +6,7 @@ use function BrainGames\core\startGame;
 
 use const BrainGames\core\{CORRECT_STRIKE, MAX_RANDOM, MIN_RANDOM};
 
-
-
-################ прогрессия ################
+############### прогрессия ################
 function getProgression()
 {
     $progression = [];

@@ -23,20 +23,15 @@ function startCalcGame()
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
         $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
         $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
-        switch (getRandMathActions($mathActionsArr)) {
-            case '-':
-                $dataArr['question'][] = $num1 . '-' . $num2;
-                $dataArr['correctAnswer'][] = $num1 - $num2;
-                break;
-            case '+':
-                $dataArr['question'][] = $num1 . '+' . $num2;
-                $dataArr['correctAnswer'][] = $num1 + $num2;
-                break;
-            case '*':
-                $dataArr['question'][] = $num1 . '*' . $num2;
-                $dataArr['correctAnswer'][] = $num1 * $num2;
-                break;
+        $mathActions = getRandMathActions($mathActionsArr);
+        if ($mathActions == '-') {
+            $dataArr['correctAnswer'][] = $num1 - $num2;
+        } elseif ($mathActions == '+') {
+            $dataArr['correctAnswer'][] = $num1 + $num2;
+        } else {
+            $dataArr['correctAnswer'][] = $num1 * $num2;
         }
+        $dataArr['question'][] = $num1 . $mathActions . $num2;
     }
     ############### Обращаемся к движку ###############
     startGame($dataArr);

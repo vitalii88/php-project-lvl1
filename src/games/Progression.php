@@ -7,14 +7,11 @@ use function BrainGames\core\startGame;
 use const BrainGames\core\{CORRECT_STRIKE, MAX_RANDOM, MIN_RANDOM};
 
 ############### прогрессия ################
-function getProgression()
+function getProgression($starProgression, $diff, $lengthProgression)
 {
     $progression = [];
-    $starProgression = random_int(MIN_RANDOM, MAX_RANDOM);
-    $d = random_int(3, 10); // шаг прогрессии
-    $lengthProgression = 10;
     for ($i = 0; $i < $lengthProgression; $i++) {
-        $progression[] = $starProgression + $d * $i;
+        $progression[] = $starProgression + $diff * $i;
     }
     return $progression;
 }
@@ -27,11 +24,15 @@ function startProgressionGame()
         'question' => [],
         'correctAnswer' => [],
     ];
+    ################ аргументы для генарации прогрессии ################
+    $starProgression = random_int(MIN_RANDOM, MAX_RANDOM);
+    $diff = random_int(3, 10); // шаг прогрессии
+    $lengthProgression = 10;
     ################ условие задачи ################
     $dataArr['rule'] = "What number is missing in the progression?";
     ################  Генерим массивы с вопросами и ответами   ################
     for ($i = 0; $i < CORRECT_STRIKE; $i++) {
-        $progressionArr = getProgression();
+        $progressionArr = getProgression($starProgression, $diff, $lengthProgression);
         $randomArrIndex = array_rand($progressionArr);
         $index = $randomArrIndex;
         //Пишем масив с ответами и заменяем ответ на заглушку

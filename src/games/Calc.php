@@ -4,35 +4,37 @@ namespace BrainGames\Calc;
 
 use function BrainGames\core\startGame;
 
-use const BrainGames\core\{CORRECT_STRIKE, MIN_RANDOM, MAX_RANDOM};
+use const BrainGames\core\{MIN_RANDOM, MAX_RANDOM};
+
+function getRandMathActions($arr)
+{
+    return $arr[array_rand($arr)];
+}
 
 function startCalcGame()
 {
 ################ условие задачи ################
-    $dataArr['rule'] = "What is the result of the expression?";
-
-################ масив с действиями ################
-    $mathActionsArr = ['+', '-', '*'];
-################ рандомайзер для действий ################
-    function getRandMathActions($mathActionsArr)
-    {
-        return $mathActionsArr[array_rand($mathActionsArr)];
-    }
-    ################ Задание и Правельные ответы ################
-    // Циклом создаем условия и сразу решаем его
-    for ($i = 0; $i < CORRECT_STRIKE; $i++) {
+    $rule = "What is the result of the expression?";
+    ################ передаем в движок ################
+    $getGameData = function () {
+        $mathActionsArr = ['+', '-', '*'];
         $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
         $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
         $mathActions = getRandMathActions($mathActionsArr);
-        if ($mathActions == '-') {
-            $dataArr['correctAnswer'][] = $num1 - $num2;
-        } elseif ($mathActions == '+') {
-            $dataArr['correctAnswer'][] = $num1 + $num2;
-        } else {
-            $dataArr['correctAnswer'][] = $num1 * $num2;
+        $question = $num1 . $mathActions . $num2;
+        switch ($mathActions) {
+            case "-":
+                $answer = $num1 - $num2;
+                break;
+            case "+":
+                $answer = $num1 + $num2;
+                break;
+            case "*":
+                $answer = $num1 * $num2;
+                break;
         }
-        $dataArr['question'][] = $num1 . $mathActions . $num2;
-    }
+        return [$question, $answer];
+    };
     ############### Обращаемся к движку ###############
-    startGame($dataArr);
+    startGame($getGameData, $rule);
 }

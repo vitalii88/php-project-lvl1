@@ -1,8 +1,31 @@
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/0aaea5dcb249f9766368/maintainability)](https://codeclimate.com/github/vitalii88/php-project-lvl1/maintainability)
 ![master_push](https://github.com/vitalii88/php-project-lvl1/workflows/master_push/badge.svg)
 
 Это реализация первого проекта на портале hexlet.io.
-На текущий момент проект находится в стадии разработки.
+В проекте реализованы 5 консольных игр:
+
+  * Калькулятор. Арифметические выражения, которые необходимо вычислить.
+  * Прогрессия. Поиск пропущенных чисел в последовательности чисел.
+  * Определение четного числа.
+  * Определение наибольшего общего делителя.
+  * Определение простого числа.
+
+Для установки пакета используя composer, выполните в терминале
+`composer global require vitalii_b88/hexlet_php_project_lvl1`
+
+команды запуска игр: 
+  * brain-calc
+  * brain-even
+  * brain-gcd
+  * brain-prime
+  * brain-progression
+
+Удаление пакета:
+`composer global remove vitalii_b88/hexlet_php_project_lvl1`
+
+
+#### Пример работы. 
 
 Работа первой игры:
 
@@ -23,7 +46,4 @@
 Работа пятой игры:
 
 [![asciicast](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4.svg)](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4)
-
-
-
 

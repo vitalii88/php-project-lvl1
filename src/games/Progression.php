@@ -26,8 +26,7 @@ function startProgressionGame()
         $diff = random_int(3, 10); // шаг прогрессии
         $lengthProgression = 10;
         $progression = getProgression($starProgression, $diff, $lengthProgression);
-        $randomIndex = array_rand($progression);
-        $index = $randomIndex;
+        $index = rand(0, $lengthProgression - 1);
         //Пишем масив с ответами и заменяем ответ на заглушку
         $answer = $progression[$index];
         $progression[$index] = "..";

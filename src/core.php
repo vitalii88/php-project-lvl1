@@ -2,7 +2,7 @@
 
 namespace BrainGames\core;
 
-const ROUNDS = 3;
+const ROUNDS_COUNT = 3;
 const MIN_RANDOM = 2;
 const MAX_RANDOM = 100;
 
@@ -17,7 +17,7 @@ function startGame($getGameData, $rule)
     $name = prompt("May I have your name?");
     line("Hello, {$name}!");
 
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         $gameData = $getGameData();
         [$question, $answer] = $gameData;
         echo "Question:" . $question, PHP_EOL;
@@ -26,8 +26,7 @@ function startGame($getGameData, $rule)
 
         if ($playerAnswer != $answer) {
             line("{$playerAnswer} is wrong answer :(. Correct answer was {$answer}");
-            line("Let's try again, {$name}");
-            exit;
+            return line("Let's try again, {$name}");
         } else {
             line("Correct!");
         }

@@ -1,5 +1,6 @@
 /vendor/
 .editorconfig
 .vscode
+.idea
 /PsySH/
 /test/

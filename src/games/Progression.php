@@ -21,7 +21,7 @@ function startProgressionGame()
     ################ условие задачи ################
     $rule = "What number is missing in the progression?";
     ################ передаем в движок ################
-    $getGameData = function () {
+    $playGame = function () {
         $starProgression = random_int(MIN_RANDOM, MAX_RANDOM);
         $diff = random_int(3, 10); // шаг прогрессии
         $lengthProgression = 10;
@@ -32,9 +32,8 @@ function startProgressionGame()
         $progression[$index] = "..";
         // Собираем строку с вопросом
         $question = implode(" ", $progression);
-
         return [$question, $answer];
     };
     ################ запуск движка ################
-    startGame($getGameData, $rule);
+    startGame($playGame, $rule);
 }

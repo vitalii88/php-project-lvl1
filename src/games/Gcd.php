@@ -18,12 +18,13 @@ function startGcdGame()
 {
     $rule = "Find the greatest common divisor of given numbers.";
     ################ передаем в движок ################
-    $getGameData = function () {
+    $playGame = function () {
         $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
         $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
-        $question = "$num1 $num2";
+//        $question = "$num1 $num2";
+        $question = $num1 . " " . $num2;
         $answer = getGcd($num1, $num2);
         return [$question, $answer];
     };
-    startGame($getGameData, $rule);
+    startGame($playGame, $rule);
 }

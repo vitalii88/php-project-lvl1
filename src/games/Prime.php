@@ -8,6 +8,9 @@ use const   BrainGames\core\{MAX_RANDOM, MIN_RANDOM};
 
 function isPrime($num)
 {
+    if ($num === 1 || $num === 0) {
+        return false;
+    }
     for ($i = 2; $i <= $num / 2; $i++) {
         if ($num % $i == 0) {
             return false;
@@ -20,12 +23,12 @@ function startPrimeGame()
 {
     $rule = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 
-    $getGameData = function () {
+    $playGame = function () {
 
         $question = random_int(MIN_RANDOM, MAX_RANDOM);
-        (isPrime($question) === true) ? $answer = "yes" : $answer = "no";
+        $answer = (isPrime($question) === true) ? "yes" : "no";
         return [$question, $answer];
     };
     ################  Запуск движка  ################
-    startGame($getGameData, $rule);
+    startGame($playGame, $rule);
 }

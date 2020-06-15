@@ -14,7 +14,7 @@
 Для установки пакета используя composer, выполните в терминале
 `composer global require vitalii_b88/hexlet_php_project_lvl1`
 
-команды запуска игр: 
+команды запуска игр:
   * brain-calc
   * brain-even
   * brain-gcd
@@ -25,7 +25,7 @@
 `composer global remove vitalii_b88/hexlet_php_project_lvl1`
 
 
-#### Пример работы. 
+#### Пример работы.
 
 Работа первой игры:
 
@@ -46,4 +46,3 @@
 Работа пятой игры:
 
 [![asciicast](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4.svg)](https://asciinema.org/a/ytOCxKCOF5nLU2M8YcM5jciW4)
-

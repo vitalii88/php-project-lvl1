@@ -16,11 +16,11 @@ function startCalcGame()
 ################ условие задачи ################
     $rule = "What is the result of the expression?";
     ################ передаем в движок ################
-    $getGameData = function () {
-        $mathActionsArr = ['+', '-', '*'];
+    $playGame = function () {
+        $mathActions = ['+', '-', '*'];
         $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
         $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
-        $mathActions = getRandMathActions($mathActionsArr);
+        $mathActions = getRandMathActions($mathActions);
         $question = $num1 . $mathActions . $num2;
         switch ($mathActions) {
             case "-":
@@ -36,5 +36,5 @@ function startCalcGame()
         return [$question, $answer];
     };
     ############### Обращаемся к движку ###############
-    startGame($getGameData, $rule);
+    startGame($playGame, $rule);
 }

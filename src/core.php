@@ -13,23 +13,23 @@ function startGame($playGame, $rule)
 {
 // Выносим приветствие, правила и узнаем имя
     line("Welcome to Brain Games");
-    line("{$rule}");
+    line($rule);
     $name = prompt("May I have your name?");
-    line("Hello, {$name}!");
+    line("Hello, " . $name . "!");
 
     for ($i = 0; $i < ROUNDS_COUNT; $i++) {
         [$question, $answer] = $playGame();
-        line("Question: $question");
+        line("Question: " . $question);
         $playerAnswer = prompt("Your answer");
 
         if ($playerAnswer != $answer) {
-            line("{$playerAnswer} is wrong answer :(. Correct answer was {$answer}");
-            line("Let's try again, {$name}");
+            line($playerAnswer . " is wrong answer :(. Correct answer was " . $answer);
+            line("Let's try again, " . $name);
             return false;
         } else {
             line("Correct!");
         }
     }
 
-    line("Congratulations {$name}");
+    return line("Congratulations " . $name);
 }

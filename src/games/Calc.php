@@ -6,23 +6,18 @@ use function BrainGames\core\startGame;
 
 use const BrainGames\core\{MIN_RANDOM, MAX_RANDOM};
 
-function getRandMathActions($arr)
-{
-    return $arr[array_rand($arr)];
-}
-
 function startCalcGame()
 {
 ################ условие задачи ################
     $rule = "What is the result of the expression?";
     ################ передаем в движок ################
     $playGame = function () {
-        $mathActions = ['+', '-', '*'];
+        $mathAction = ['+', '-', '*'];
         $num1 = random_int(MIN_RANDOM, MAX_RANDOM);
         $num2 = random_int(MIN_RANDOM, MAX_RANDOM);
-        $mathActions = getRandMathActions($mathActions);
-        $question = $num1 . $mathActions . $num2;
-        switch ($mathActions) {
+        $randomAction = $mathAction[array_rand($mathAction)];
+        $question = $num1 . $randomAction . $num2;
+        switch ($randomAction) {
             case "-":
                 $answer = $num1 - $num2;
                 break;

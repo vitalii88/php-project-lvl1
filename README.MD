@@ -35,7 +35,7 @@
 
 [![asciicast](https://asciinema.org/a/htPQ90zs7Ko4UCUlnc1elgzax.svg)](https://asciinema.org/a/htPQ90zs7Ko4UCUlnc1elgzax)
 
-Работа третьей игры:
+Работа третьей игры: 
 
 [![asciicast](https://asciinema.org/a/QSac45tM06dvGDsFaHP17e2i5.svg)](https://asciinema.org/a/QSac45tM06dvGDsFaHP17e2i5)
 

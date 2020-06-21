@@ -8,7 +8,8 @@ use const   BrainGames\core\{MAX_RANDOM, MIN_RANDOM};
 
 function isPrime($num)
 {
-    if ($num === 1 || $num === 0) {
+    // if ($num === 1 || $num === 0) {
+    if ($num <= 1) {
         return false;
     }
     for ($i = 2; $i <= $num / 2; $i++) {
@@ -21,7 +22,7 @@ function isPrime($num)
 
 function startPrimeGame()
 {
-    $rule = "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
+    $rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
     $playGame = function () {
 
